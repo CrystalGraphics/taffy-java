@@ -1467,10 +1467,30 @@ public class FlexboxComputer {
                 childInnerCross = itemCross;
             } else {
                 // Measure child to get cross size using measureChildSize
-                // For wrap containers with AR items, don't pass the flex-grown main size.
-                // This prevents AR from inflating the hypothetical cross based on flex growth,
-                // keeping the container cross based on pre-flex-growth AR values (matching browser behavior).
-                float knownMain = isWrap ? NaN : (isRow ? item.targetSize.width : item.targetSize.height);
+                //
+                // CrystalGUI: upstream 1.1.4 read `isWrap ? NaN : ...` here, on the stated grounds that
+                // an aspect-ratio item in a wrapping container would otherwise inflate its hypothetical
+                // cross size from its flex-GROWN main size. Deleted, because it is wrong three ways and
+                // each was measured rather than argued (taffy/MODIFICATIONS.md #1, spike S1):
+                //
+                //  1. CSS Flexbox 9.4 step 7 says to determine the hypothetical cross size "by performing
+                //     layout with the USED main size" -- the grown one. `resolveFlexibleLengths` runs
+                //     immediately above this call, so `targetSize` IS that. Upstream Rust Taffy passes it
+                //     unconditionally and has no branch here at all.
+                //  2. It is keyed on the CONTAINER's flex-wrap and was written for the ITEM having an
+                //     aspect ratio, so it fired for every item in a wrapping container. A MEASURED leaf
+                //     has no aspect ratio and nothing to inflate; it simply lost the one number it needed
+                //     and was measured against the container's inner main size instead of its own. On a
+                //     200px row of two flex-grow:1 text leaves, `nowrap` told the measure func 100 and
+                //     `wrap` told it 200 -- so the leaf reported a height for a width it was never given.
+                //     Its WIDTH stayed correct, which is why the symptom is clipped text and not a box
+                //     that looks wrong.
+                //  3. It did not even do what it claimed for aspect-ratio items: it collapsed them.
+                //     A single AR item in a 200px wrapping row came out with root height 0 (item 20x0)
+                //     where `nowrap` gave 20 -- four of five AR shapes measured zero-height. Deleting it
+                //     makes every single-line case agree with `nowrap` exactly and leaves the genuinely
+                //     two-line case (3 x 80px in a 200px row) unchanged at 160.
+                float knownMain = isRow ? item.targetSize.width : item.targetSize.height;
                 FloatSize knownDims = isRow
                                       ? new FloatSize(knownMain, itemCross)
                                       : new FloatSize(itemCross, knownMain);
