@@ -27,13 +27,20 @@ Two separate things broke, and neither announces itself:
 
 ## Working on it
 
+**This repository does not build on its own, by design.** It carries a `build.gradle.kts` and no
+settings file or wrapper: it is a git submodule of
+[CrystalGUI](https://github.com/CrystalGraphics/CrystalGUI), included from that project's
+`settings.gradle.kts` as `:taffy`, exactly as `gl-debug-harness` is. So:
+
 ```bash
-./gradlew build     # compiles and runs the regression tests
+git clone --recursive https://github.com/CrystalGraphics/CrystalGUI
+cd CrystalGUI
+./gradlew :taffy:test        # this module's regression tests
 ```
 
-Upstream's own build, tests and `gentest` tooling are not carried here: this fork exists to be
-consumed as a Gradle module by CrystalGUI, and it is built from CrystalGUI's own settings file as
-`:taffy`.
+Upstream's own build, tests and `gentest` tooling are deliberately not carried here — that tooling
+generates a conformance suite against Rust Taffy's fixtures, which is upstream's job and not something
+a consumer fork should be re-running. What this fork tests is what this fork changed.
 
 **Keep changes minimal and annotate them in place with a `// CrystalGUI:` comment.** Do not reformat
 these files — a whitespace pass makes the next diff against upstream unreadable, which is the whole
