@@ -14,7 +14,7 @@ dependency is worth less than a pinned one.
 
 The engine's leaf-measurement path (`MeasureFunc`) is unusable under `flex-wrap: wrap`, and that is
 not a configuration we can avoid: it is the only way a row of widgets reflows. The defect is one line
-inside the flexbox algorithm, so it can only be fixed here. `plan_ui_rewrite.md` D3 records the
+inside the flexbox algorithm, so it can only be fixed here. `plan/engine-rewrite.md` D3 records the
 decision; spike S1 is the measurement that justified it.
 
 The package name is deliberately **left as `dev.vfyjxf.taffy`**. `mc1710` already declares Taffy as

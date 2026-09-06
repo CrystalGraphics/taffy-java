@@ -2,7 +2,7 @@
 //
 // A fork of the published sources of `dev.vfyjxf:taffy:1.1.4` (MIT, see LICENSE), carrying our own
 // fixes to its measure path. `MODIFICATIONS.md` is the diff-against-upstream statement MIT requires
-// and the reason each change exists; `plan_ui_rewrite.md` D3 is the decision to own this at all.
+// and the reason each change exists; `plan/engine-rewrite.md` D3 is the decision to own this at all.
 //
 // The package stays `dev.vfyjxf.taffy` on purpose — mc1710 already relocates it under
 // `com.crystalgui.shadow.` when shipping, so this fork cannot lose a classloader race to a stock
