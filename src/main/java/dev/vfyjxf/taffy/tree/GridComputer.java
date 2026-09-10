@@ -31,12 +31,12 @@ import dev.vfyjxf.taffy.tree.grid.NamedLineResolver;
 import dev.vfyjxf.taffy.util.ContentSizeUtil;
 import dev.vfyjxf.taffy.util.Resolve;
 import dev.vfyjxf.taffy.util.TaffyMath;
-import it.unimi.dsi.fastutil.floats.FloatArrayList;
-import it.unimi.dsi.fastutil.floats.FloatList;
-import it.unimi.dsi.fastutil.ints.Int2FloatMap;
-import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
-import it.unimi.dsi.fastutil.ints.IntArrayList;
-import it.unimi.dsi.fastutil.ints.IntList;
+import dev.vfyjxf.taffy.collection.FloatArrayList;
+import dev.vfyjxf.taffy.collection.FloatList;
+import dev.vfyjxf.taffy.collection.Int2FloatMap;
+import dev.vfyjxf.taffy.collection.Int2FloatOpenHashMap;
+import dev.vfyjxf.taffy.collection.IntArrayList;
+import dev.vfyjxf.taffy.collection.IntList;
 
 import java.util.ArrayList;
 import java.util.List;

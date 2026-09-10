@@ -32,14 +32,17 @@ repositories {
     mavenCentral()
 }
 
+// NO fastutil, since 2026-09-10. Upstream names seven of its types across GridComputer and TaffyTree;
+// `dev.vfyjxf.taffy.collection` reimplements exactly those, so the two files changed only their import
+// lines and every call site is untouched. The dependency was `api` because the public surface leaked
+// it -- now nothing leaks and this module has no compile dependency at all.
+//
+// It was 19.65 MB of CrystalGUI's 31.20 MB merged jar, 12,808 of 15,892 entries. MC 1.20.x supplies
+// fastutil and a mod there can just use it; 1.7.10 has none, and an unrelocated copy is a split
+// package against Minecraft's own module on Forge and NeoForge. Shading a relocated copy was the only
+// way to serve all four loaders, and seven collections is a smaller thing to own than 58 MB.
+// plan/crystalgui/platform-single-jar.md 5.3, D3.
 dependencies {
-    // `api`, not `implementation`: upstream's public surface leaks fastutil (GridComputer's track
-    // lists, TaffyTree's node map), and consumers resolved it transitively through the artifact's POM
-    // before this was a project. `implementation` would quietly drop it from mc1710's shadow
-    // configuration -- the "a module bundled as CLASS FILES does not bring its dependencies" trap that
-    // cost this repo every `.java` script once already.
-    api("it.unimi.dsi:fastutil:${rootProject.properties["fastutil_version"]}")
-
     testImplementation("junit:junit:${rootProject.properties["dep.junit"]}")
 }
 

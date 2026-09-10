@@ -99,15 +99,41 @@ restoring the `isWrap ? NaN` fails the first two and passes the third.
 
 ---
 
-## Known, not done: fastutil
+## 2. fastutil, replaced — `dev.vfyjxf.taffy.collection` (2026-09-10)
 
-Taffy pulls **fastutil 8.5.12** for seven imports — `IntList`/`IntArrayList`,
-`FloatList`/`FloatArrayList`, `Int2FloatMap`/`Int2FloatOpenHashMap`, `Long2ObjectOpenHashMap`. Because
-`mc1710` shades it, the shipped mod jar carries **12,808 relocated fastutil entries, ~22 MB of a 48 MB
-jar** — roughly half the download, for seven types.
+Upstream pulls **fastutil 8.5.12** for seven imports across two files, `tree/GridComputer` and
+`tree/TaffyTree`: `IntList`/`IntArrayList`, `FloatList`/`FloatArrayList`,
+`Int2FloatMap`/`Int2FloatOpenHashMap`, `Long2ObjectOpenHashMap`. fastutil is one artifact of 12,795
+classes, and a jar that shades it pays all of it — measured in CrystalGUI's merged jar, **19.65 MB of
+31.20, and 12,808 of 15,892 entries**. 63% of a mod, for seven collections.
 
-Replacing them with primitive collections of our own is a large and cheap win now that the port is
-ours. It is deliberately **not** done here: spike S1 is meant to stay small, and swapping a hash map
-implementation inside a layout engine is a change that wants its own tests (`Int2FloatOpenHashMap`'s
-default return value is the sort of thing that is silent when wrong). Recorded so it is not
-rediscovered.
+**This fork no longer depends on fastutil at all.** The seven types are reimplemented in
+`dev.vfyjxf.taffy.collection` under the same names and signatures, so the two files above changed
+**only their import lines** and all ~80 call sites are untouched — which is what keeps the next
+upstream diff readable. `build.gradle.kts` now declares no compile dependency whatsoever. The merged
+jar went to **8.44 MB**.
+
+### What it costs a reader of this fork
+
+The replacements carry exactly the methods Taffy calls and no more — no `java.util.List` or `Map`
+implementation, and no `remove` on `Int2FloatOpenHashMap`, because Taffy never removes from one. That
+is deliberate: an unimplemented method is a compile error at the call site that wants it, which is the
+right moment to decide whether the assumed semantics are the ones written here.
+
+Two behaviours are silent when wrong, and both are pinned by `CollectionsTest`:
+
+- **`Int2FloatMap.defaultReturnValue`** is what `get` answers for an absent key, and it defaults to
+  `0f`, not `NaN`. `GridComputer` sets it to `NaN` for its fit-content limits precisely so a stored
+  zero is distinguishable from a missing entry.
+- **`Long2ObjectOpenHashMap.remove` shifts, it does not tombstone.** Linear probing ends a chain at
+  the first free slot, so blanking a slot mid-chain strands every entry behind it: they are still in
+  the table, `get` returns null, `size` is right, and nothing throws. The removal is Knuth 6.4
+  algorithm R in fastutil's own formulation, and the test drives it against a `java.util.HashMap` over
+  200,000 random operations followed by a sweep of the whole key space — because no hand-written case
+  finds a stranded entry, and a random one finds it on the first bad shift.
+
+### Covered by
+
+`dev.vfyjxf.taffy.collection.CollectionsTest` (12 assertions' worth, differential against the JDK),
+`:core:test --tests "com.crystalgui.ui.box.*"`, and `prodSmoke` — the four installed Minecraft clients,
+which lay out a full workbench through `GridComputer` and photograph it.

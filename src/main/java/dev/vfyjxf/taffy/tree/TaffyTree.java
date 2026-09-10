@@ -8,7 +8,7 @@ import dev.vfyjxf.taffy.style.FlexDirection;
 import dev.vfyjxf.taffy.style.TaffyStyle;
 import dev.vfyjxf.taffy.util.MeasureFunc;
 import dev.vfyjxf.taffy.util.RoundLayout;
-import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
+import dev.vfyjxf.taffy.collection.Long2ObjectOpenHashMap;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
@@ -26,7 +26,7 @@ public class TaffyTree {
     /** Counter for generating unique node IDs */
     private final AtomicLong nodeIdCounter = new AtomicLong(0);
 
-    /** NodeData storage by node ID - using fastutil for faster primitive key access */
+    /** NodeData storage by node ID -- a primitive-key map, so a lookup boxes nothing. */
     private final Long2ObjectOpenHashMap<NodeData> nodes;
 
     /** Context data (measure functions) storage by node ID */
