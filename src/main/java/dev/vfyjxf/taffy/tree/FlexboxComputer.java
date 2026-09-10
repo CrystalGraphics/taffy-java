@@ -2692,16 +2692,50 @@ public class FlexboxComputer {
                 knownDimensions = maybeClamp(maybeApplyAspectRatio(knownDimensions, aspectRatio), minSz, maxSz);
             }
 
+            // CrystalGUI modification #2, see taffy/MODIFICATIONS.md -- shrink-to-fit is an INTRINSIC
+            // measurement. A definite available size tells the subtree the size is already decided, so a
+            // descendant's `min-width: 100%` resolves against the containing block and becomes the answer.
+            TaffySize<AvailableSpace> childAvailableSpace = new TaffySize<>(
+                isNaN(knownDimensions.width)
+                    ? AvailableSpace.maxContent() : AvailableSpace.definite(containerSize.width),
+                isNaN(knownDimensions.height)
+                    ? AvailableSpace.maxContent() : AvailableSpace.definite(containerSize.height));
+
             LayoutOutput output = layoutComputer.performChildLayout(
                 childId,
                 knownDimensions,
                 new FloatSize(insetRelativeWidth, insetRelativeHeight),
-                new TaffySize<>(AvailableSpace.definite(containerSize.width), AvailableSpace.definite(containerSize.height)),
+                childAvailableSpace,
                 // Absolute positioned nodes need inherent sizing so that min/max constraints and aspect-ratio
                 // resolution are applied by leaf/layout algorithms.
                 SizingMode.INHERENT_SIZE,
                 new TaffyLine<>(false, false)
             );
+
+            // ...and it is bounded: min(max(min-content, available), max-content). An axis that overruns
+            // is re-measured against the bound -- the call above unmodified, correct once the size
+            // genuinely is decided. Clamping the first answer instead drops the min-content term and
+            // squeezes whatever cannot shrink.
+            float widthBound = isNaN(knownDimensions.width)
+                ? shrinkToFitBound(insetRelativeWidth, left, right, margin.left, margin.right)
+                : Float.POSITIVE_INFINITY;
+            float heightBound = isNaN(knownDimensions.height)
+                ? shrinkToFitBound(insetRelativeHeight, top, bottom, margin.top, margin.bottom)
+                : Float.POSITIVE_INFINITY;
+            boolean overrunsWidth = output.size().width > widthBound;
+            boolean overrunsHeight = output.size().height > heightBound;
+            if (overrunsWidth || overrunsHeight) {
+                output = layoutComputer.performChildLayout(
+                    childId,
+                    knownDimensions,
+                    new FloatSize(insetRelativeWidth, insetRelativeHeight),
+                    new TaffySize<>(
+                        overrunsWidth ? AvailableSpace.definite(widthBound) : childAvailableSpace.width,
+                        overrunsHeight ? AvailableSpace.definite(heightBound) : childAvailableSpace.height),
+                    SizingMode.INHERENT_SIZE,
+                    new TaffyLine<>(false, false)
+                );
+            }
 
             FloatSize finalSize = maybeClamp(
                 new FloatSize(
@@ -2797,6 +2831,19 @@ public class FlexboxComputer {
 
             tree.setUnroundedLayout(childId, layout);
         }
+    }
+
+    /**
+     * What a shrink-to-fit out-of-flow box may have on one axis: its containing block less the insets and
+     * margins that are stated. Unbounded when the block has no size of its own.
+     */
+    private static float shrinkToFitBound(float containingBlock, float insetStart, float insetEnd,
+                                          float marginStart, float marginEnd) {
+        if (isNaN(containingBlock)) return Float.POSITIVE_INFINITY;
+        return Math.max(0f, containingBlock
+            - (isNaN(insetStart) ? 0f : insetStart)
+            - (isNaN(insetEnd) ? 0f : insetEnd)
+            - marginStart - marginEnd);
     }
 
     private FloatRect resolveMarginToOption(TaffyRect<LengthPercentageAuto> margin, float parentWidth) {
