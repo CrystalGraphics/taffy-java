@@ -731,6 +731,20 @@ public class FlexboxComputer {
             item.flexBasis = Math.max(basis, paddingBorderMain); // Floor at padding+border
             item.innerFlexBasis = Math.max(0, item.flexBasis - paddingBorderMain);
 
+            // CrystalGUI: MAX-SIZE: MAX-CONTENT resolves to nothing in generateFlexItems -- an intrinsic keyword has no length to
+            // resolve against the parent. The item's max-content main size is the cap it names: a share of a row that
+            // stops at the item's natural width, as a squeezed tab strip's does.
+            TaffyDimension maxMainStyle = isRow ? childStyle.getMaxSize().width : childStyle.getMaxSize().height;
+            if (maxMainStyle != null && maxMainStyle.isMaxContent()) {
+                TaffySize<AvailableSpace> naturalSpace = isRow
+                                                         ? new TaffySize<>(AvailableSpace.maxContent(), crossAxisAvailableSpace)
+                                                         : new TaffySize<>(crossAxisAvailableSpace, AvailableSpace.maxContent());
+                FloatSize natural = layoutComputer.measureChildSize(item.nodeId, childKnownDimensions, childParentSize,
+                    naturalSpace, SizingMode.CONTENT_SIZE, new TaffyLine<>(false, false));
+                float cap = Math.max(isRow ? natural.width : natural.height, paddingBorderMain);
+                item.maxSize = isRow ? new FloatSize(cap, item.maxSize.height) : new FloatSize(item.maxSize.width, cap);
+            }
+
             // Calculate resolved minimum main size (CSS 4.5. Automatic Minimum Size of Flex Items)
             // https://www.w3.org/TR/css-flexbox-1/#min-size-auto
             float minMain = isRow ? item.minSize.width : item.minSize.height;

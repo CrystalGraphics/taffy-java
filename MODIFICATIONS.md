@@ -203,6 +203,22 @@ overflow, so asserting on it would pin a clamp CSS does not have.
 
 ---
 
+## 3. `tree/FlexboxComputer.determineFlexBaseSize` — `max-size: max-content` on a flex item
+
+Upstream resolved an intrinsic keyword in `maxSize` to no maximum: there is no length to resolve it against, so
+`maybeResolveSize` answers NaN and the item is uncapped. The main-axis `max-content` case now measures the item at
+max-content, as the flex-basis path already does, and uses that as its maximum.
+
+It is what `flex: 1 1 0; max-width: max-content` needs to mean: an equal share of the row that stops at each item's
+natural width — a squeezed tab strip, where a tab's width must not follow its content or a tab that grew its close
+button on hover took width from every other.
+
+Min-content, fit-content and the cross axis are unchanged.
+
+### Covered by
+
+`TaffyMaxContentMaxSizeTest` — items with room stop at their content; without it they share the row equally.
+
 ## Known, not done: fastutil
 
 Two behaviours are silent when wrong, and both are pinned by `CollectionsTest`:
