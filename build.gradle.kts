@@ -8,9 +8,10 @@
 // `com.crystalgui.shadow.` when shipping, so this fork cannot lose a classloader race to a stock
 // copy, and 165 call sites in core/ and the harness need no edit. See MODIFICATIONS.md.
 //
-// Java 21 to match :core, downgraded to Java 8 bytecode by mc1710's `downgradeJar` exactly as core's
-// classes are: `Layout` is a record and `TrackSizingFunction` a sealed hierarchy, so this cannot be
-// compiled at 8 directly.
+// An abstract module, like :core: Java 25, with a Java 8 copy for every consumer below it. `Layout` is
+// a record and `TrackSizingFunction` a sealed hierarchy, so this cannot be compiled at 8 directly.
+
+import cgbuildlogic.abstractModule
 
 plugins {
     `java-library`
@@ -20,13 +21,7 @@ plugins {
 group = "com.crystalgui"
 version = "1.0.0"
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(21))
-    }
-}
+abstractModule("dev/vfyjxf/taffy/jvmdg")
 
 repositories {
     mavenCentral()
