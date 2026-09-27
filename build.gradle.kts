@@ -11,7 +11,9 @@
 // An abstract module, like :core: Java 25, with a Java 8 copy for every consumer below it. `Layout` is
 // a record and `TrackSizingFunction` a sealed hierarchy, so this cannot be compiled at 8 directly.
 
+import cgbuildlogic.Licence
 import cgbuildlogic.abstractModule
+import cgbuildlogic.publishedModule
 
 plugins {
     `java-library`
@@ -22,6 +24,7 @@ group = "com.crystalgui"
 version = "1.0.0"
 
 abstractModule("dev/vfyjxf/taffy/jvmdg")
+publishedModule("Taffy (CrystalGUI fork)", "The Taffy flexbox and grid layout engine in Java, as CrystalGUI ships it.", Licence.MIT)
 
 repositories {
     mavenCentral()
