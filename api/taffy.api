@@ -1,0 +1,1246 @@
+# The public API of com.crystalgui:taffy:1.0.0 as last released. Written by apiDump; apiCheck fails on a removal.
+dev/vfyjxf/taffy/collection/FloatArrayList
+  access public,final
+  extends java/lang/Object
+  implements dev/vfyjxf/taffy/collection/FloatList
+  method public <init> ()V
+  method public <init> (I)V
+  method public add (F)Z
+  method public getFloat (I)F
+  method public isEmpty ()Z
+  method public iterator ()Ljava/util/Iterator;
+  method public set (IF)F
+  method public size ()I
+  method public toString ()Ljava/lang/String;
+dev/vfyjxf/taffy/collection/FloatList
+  access public,abstract,interface
+  extends java/lang/Object
+  implements java/lang/Iterable
+  method public,abstract add (F)Z
+  method public,abstract getFloat (I)F
+  method public,abstract isEmpty ()Z
+  method public,abstract set (IF)F
+  method public,abstract size ()I
+dev/vfyjxf/taffy/collection/Int2FloatMap
+  access public,abstract,interface
+  extends java/lang/Object
+  method public,abstract defaultReturnValue (F)V
+  method public,abstract get (I)F
+  method public,abstract put (IF)F
+dev/vfyjxf/taffy/collection/Int2FloatOpenHashMap
+  access public,final
+  extends java/lang/Object
+  implements dev/vfyjxf/taffy/collection/Int2FloatMap
+  method public <init> ()V
+  method public <init> (I)V
+  method public containsKey (I)Z
+  method public defaultReturnValue (F)V
+  method public get (I)F
+  method public put (IF)F
+  method public size ()I
+  method public toString ()Ljava/lang/String;
+dev/vfyjxf/taffy/collection/IntArrayList
+  access public,final
+  extends java/lang/Object
+  implements dev/vfyjxf/taffy/collection/IntList
+  method public <init> ()V
+  method public <init> (I)V
+  method public add (I)Z
+  method public contains (I)Z
+  method public getInt (I)I
+  method public indexOf (I)I
+  method public isEmpty ()Z
+  method public iterator ()Ljava/util/Iterator;
+  method public size ()I
+  method public toString ()Ljava/lang/String;
+dev/vfyjxf/taffy/collection/IntList
+  access public,abstract,interface
+  extends java/lang/Object
+  implements java/lang/Iterable
+  method public,abstract add (I)Z
+  method public,abstract contains (I)Z
+  method public,abstract getInt (I)I
+  method public,abstract indexOf (I)I
+  method public,abstract isEmpty ()Z
+  method public,abstract size ()I
+dev/vfyjxf/taffy/collection/Long2ObjectOpenHashMap
+  access public,final
+  extends java/lang/Object
+  method public <init> ()V
+  method public <init> (I)V
+  method public clear ()V
+  method public containsKey (J)Z
+  method public get (J)Ljava/lang/Object;
+  method public isEmpty ()Z
+  method public keySet ()Ljava/util/Set;
+  method public put (JLjava/lang/Object;)Ljava/lang/Object;
+  method public remove (J)Ljava/lang/Object;
+  method public size ()I
+  method public toString ()Ljava/lang/String;
+dev/vfyjxf/taffy/geometry/AbsoluteAxis
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final HORIZONTAL Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;
+  field public,static,final VERTICAL Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;
+  method public other ()Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;
+  method public,static values ()[Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;
+dev/vfyjxf/taffy/geometry/AbstractAxis
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final BLOCK Ldev/vfyjxf/taffy/geometry/AbstractAxis;
+  field public,static,final INLINE Ldev/vfyjxf/taffy/geometry/AbstractAxis;
+  method public asAbsNaive ()Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;
+  method public other ()Ldev/vfyjxf/taffy/geometry/AbstractAxis;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/geometry/AbstractAxis;
+  method public,static values ()[Ldev/vfyjxf/taffy/geometry/AbstractAxis;
+dev/vfyjxf/taffy/geometry/FloatLine
+  access public
+  extends java/lang/Object
+  field public end F
+  field public start F
+  method public <init> (FF)V
+  method public copy ()Ldev/vfyjxf/taffy/geometry/FloatLine;
+  method public equals (Ljava/lang/Object;)Z
+  method public hashCode ()I
+  method public sum ()F
+  method public toString ()Ljava/lang/String;
+  method public,static all (F)Ldev/vfyjxf/taffy/geometry/FloatLine;
+dev/vfyjxf/taffy/geometry/FloatPoint
+  access public
+  extends java/lang/Object
+  field public x F
+  field public y F
+  field public,static,final ZERO Ldev/vfyjxf/taffy/geometry/FloatPoint;
+  method public <init> (FF)V
+  method public copy ()Ldev/vfyjxf/taffy/geometry/FloatPoint;
+  method public cross (Ldev/vfyjxf/taffy/style/FlexDirection;)F
+  method public equals (Ljava/lang/Object;)Z
+  method public get (Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;)F
+  method public hashCode ()I
+  method public main (Ldev/vfyjxf/taffy/style/FlexDirection;)F
+  method public set (Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;F)V
+  method public setCross (Ldev/vfyjxf/taffy/style/FlexDirection;F)V
+  method public setMain (Ldev/vfyjxf/taffy/style/FlexDirection;F)V
+  method public toString ()Ljava/lang/String;
+  method public transpose ()Ldev/vfyjxf/taffy/geometry/FloatPoint;
+  method public,static all (F)Ldev/vfyjxf/taffy/geometry/FloatPoint;
+  method public,static fromMainCross (Ldev/vfyjxf/taffy/style/FlexDirection;FF)Ldev/vfyjxf/taffy/geometry/FloatPoint;
+  method public,static none ()Ldev/vfyjxf/taffy/geometry/FloatPoint;
+  method public,static zero ()Ldev/vfyjxf/taffy/geometry/FloatPoint;
+dev/vfyjxf/taffy/geometry/FloatRect
+  access public
+  extends java/lang/Object
+  field public bottom F
+  field public left F
+  field public right F
+  field public top F
+  field public,static,final ZERO Ldev/vfyjxf/taffy/geometry/FloatRect;
+  method public <init> (FFFF)V
+  method public add (Ldev/vfyjxf/taffy/geometry/FloatRect;)Ldev/vfyjxf/taffy/geometry/FloatRect;
+  method public copy ()Ldev/vfyjxf/taffy/geometry/FloatRect;
+  method public crossAxisSum (Ldev/vfyjxf/taffy/style/FlexDirection;)F
+  method public crossEnd (Ldev/vfyjxf/taffy/style/FlexDirection;)F
+  method public crossStart (Ldev/vfyjxf/taffy/style/FlexDirection;)F
+  method public equals (Ljava/lang/Object;)Z
+  method public getBottom ()F
+  method public getLeft ()F
+  method public getRight ()F
+  method public getTop ()F
+  method public gridAxisSum (Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;)F
+  method public hashCode ()I
+  method public horizontalAxisSum ()F
+  method public horizontalComponents ()Ldev/vfyjxf/taffy/geometry/FloatLine;
+  method public mainAxisSum (Ldev/vfyjxf/taffy/style/FlexDirection;)F
+  method public mainEnd (Ldev/vfyjxf/taffy/style/FlexDirection;)F
+  method public mainStart (Ldev/vfyjxf/taffy/style/FlexDirection;)F
+  method public sumAxes ()Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public toString ()Ljava/lang/String;
+  method public verticalAxisSum ()F
+  method public verticalComponents ()Ldev/vfyjxf/taffy/geometry/FloatLine;
+  method public,static all (F)Ldev/vfyjxf/taffy/geometry/FloatRect;
+  method public,static auto (Ldev/vfyjxf/taffy/geometry/FloatSupplier;)Ldev/vfyjxf/taffy/geometry/FloatRect;
+  method public,static fromLength (F)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public,static fromPercent (F)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public,static hv (FF)Ldev/vfyjxf/taffy/geometry/FloatRect;
+  method public,static ltrb (FFFF)Ldev/vfyjxf/taffy/geometry/FloatRect;
+  method public,static of (FFFF)Ldev/vfyjxf/taffy/geometry/FloatRect;
+  method public,static zero ()Ldev/vfyjxf/taffy/geometry/FloatRect;
+dev/vfyjxf/taffy/geometry/FloatSize
+  access public
+  extends java/lang/Object
+  field public height F
+  field public width F
+  field public,static,final NONE Ldev/vfyjxf/taffy/geometry/FloatSize;
+  field public,static,final ZERO Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public <init> (FF)V
+  method public <init> (FLjava/lang/Float;)V
+  method public <init> (Ljava/lang/Float;F)V
+  method public <init> (Ljava/lang/Float;Ljava/lang/Float;)V
+  method public copy ()Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public cross (Ldev/vfyjxf/taffy/style/FlexDirection;)F
+  method public equals (Ljava/lang/Object;)Z
+  method public get (Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;)F
+  method public getHeight ()F
+  method public getWidth ()F
+  method public hashCode ()I
+  method public isNone ()Z
+  method public isZero ()Z
+  method public main (Ldev/vfyjxf/taffy/style/FlexDirection;)F
+  method public set (Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;F)V
+  method public toString ()Ljava/lang/String;
+  method public,static all (F)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static auto (Ldev/vfyjxf/taffy/geometry/FloatSupplier;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static maxContent ()Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public,static minContent ()Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public,static none ()Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static of (FF)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static zero ()Ldev/vfyjxf/taffy/geometry/FloatSize;
+dev/vfyjxf/taffy/geometry/FloatSupplier
+  access public,abstract,interface
+  extends java/lang/Object
+  method public,abstract get ()F
+dev/vfyjxf/taffy/geometry/TaffyLine
+  access public,final
+  extends java/lang/Object
+  field public end Ljava/lang/Object;
+  field public start Ljava/lang/Object;
+  field public,static,final FALSE Ldev/vfyjxf/taffy/geometry/TaffyLine;
+  field public,static,final TRUE Ldev/vfyjxf/taffy/geometry/TaffyLine;
+  method public <init> (Ljava/lang/Object;Ljava/lang/Object;)V
+  method public copy ()Ldev/vfyjxf/taffy/geometry/TaffyLine;
+  method public equals (Ljava/lang/Object;)Z
+  method public hashCode ()I
+  method public map (Ljava/util/function/Function;)Ldev/vfyjxf/taffy/geometry/TaffyLine;
+  method public sum ()F
+  method public toString ()Ljava/lang/String;
+  method public,static all (Ljava/lang/Object;)Ldev/vfyjxf/taffy/geometry/TaffyLine;
+dev/vfyjxf/taffy/geometry/TaffyPoint
+  access public,final
+  extends java/lang/Object
+  field public x Ljava/lang/Object;
+  field public y Ljava/lang/Object;
+  field public,static,final ZERO Ldev/vfyjxf/taffy/geometry/TaffyPoint;
+  method public <init> (Ljava/lang/Object;Ljava/lang/Object;)V
+  method public copy ()Ldev/vfyjxf/taffy/geometry/TaffyPoint;
+  method public cross (Ldev/vfyjxf/taffy/style/FlexDirection;)Ljava/lang/Object;
+  method public equals (Ljava/lang/Object;)Z
+  method public get (Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;)Ljava/lang/Object;
+  method public hashCode ()I
+  method public main (Ldev/vfyjxf/taffy/style/FlexDirection;)Ljava/lang/Object;
+  method public map (Ljava/util/function/Function;)Ldev/vfyjxf/taffy/geometry/TaffyPoint;
+  method public set (Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;Ljava/lang/Object;)V
+  method public setCross (Ldev/vfyjxf/taffy/style/FlexDirection;Ljava/lang/Object;)V
+  method public setMain (Ldev/vfyjxf/taffy/style/FlexDirection;Ljava/lang/Object;)V
+  method public toString ()Ljava/lang/String;
+  method public transpose ()Ldev/vfyjxf/taffy/geometry/TaffyPoint;
+  method public zipWith (Ldev/vfyjxf/taffy/geometry/TaffyPoint;Ljava/util/function/BiFunction;)Ldev/vfyjxf/taffy/geometry/TaffyPoint;
+  method public,static all (Ljava/lang/Object;)Ldev/vfyjxf/taffy/geometry/TaffyPoint;
+  method public,static fromMainCross (Ldev/vfyjxf/taffy/style/FlexDirection;Ljava/lang/Object;Ljava/lang/Object;)Ldev/vfyjxf/taffy/geometry/TaffyPoint;
+  method public,static none ()Ldev/vfyjxf/taffy/geometry/TaffyPoint;
+  method public,static zero ()Ldev/vfyjxf/taffy/geometry/TaffyPoint;
+dev/vfyjxf/taffy/geometry/TaffyRect
+  access public,final
+  extends java/lang/Object
+  field public bottom Ljava/lang/Object;
+  field public left Ljava/lang/Object;
+  field public right Ljava/lang/Object;
+  field public top Ljava/lang/Object;
+  field public,static,final ZERO Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public <init> (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+  method public add (Ldev/vfyjxf/taffy/geometry/TaffyRect;)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public copy ()Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public crossAxisSum (Ldev/vfyjxf/taffy/style/FlexDirection;)F
+  method public crossEnd (Ldev/vfyjxf/taffy/style/FlexDirection;)Ljava/lang/Object;
+  method public crossStart (Ldev/vfyjxf/taffy/style/FlexDirection;)Ljava/lang/Object;
+  method public equals (Ljava/lang/Object;)Z
+  method public getBottom ()Ljava/lang/Object;
+  method public getLeft ()Ljava/lang/Object;
+  method public getRight ()Ljava/lang/Object;
+  method public getTop ()Ljava/lang/Object;
+  method public gridAxisSum (Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;)F
+  method public hashCode ()I
+  method public horizontalAxisSum ()F
+  method public horizontalComponents ()Ldev/vfyjxf/taffy/geometry/TaffyLine;
+  method public mainAxisSum (Ldev/vfyjxf/taffy/style/FlexDirection;)F
+  method public mainEnd (Ldev/vfyjxf/taffy/style/FlexDirection;)Ljava/lang/Object;
+  method public mainStart (Ldev/vfyjxf/taffy/style/FlexDirection;)Ljava/lang/Object;
+  method public map (Ljava/util/function/Function;)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public resolveOrZero (F)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public resolveOrZero (Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public resolveOrZero (Ldev/vfyjxf/taffy/geometry/TaffySize;)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public resolveOrZero (Ljava/lang/Float;)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public sumAxes ()Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public toString ()Ljava/lang/String;
+  method public verticalAxisSum ()F
+  method public verticalComponents ()Ldev/vfyjxf/taffy/geometry/TaffyLine;
+  method public zipSize (Ldev/vfyjxf/taffy/geometry/TaffySize;Ljava/util/function/BiFunction;)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public,static all (Ljava/lang/Object;)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public,static auto (Ljava/util/function/Supplier;)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public,static fromLength (F)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public,static fromPercent (F)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public,static hv (Ljava/lang/Object;Ljava/lang/Object;)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public,static ltrb (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public,static of (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public,static zero ()Ldev/vfyjxf/taffy/geometry/TaffyRect;
+dev/vfyjxf/taffy/geometry/TaffySize
+  access public,final
+  extends java/lang/Object
+  field public height Ljava/lang/Object;
+  field public width Ljava/lang/Object;
+  field public,static,final ZERO Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public <init> (Ljava/lang/Object;Ljava/lang/Object;)V
+  method public copy ()Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public cross (Ldev/vfyjxf/taffy/style/FlexDirection;)Ljava/lang/Object;
+  method public equals (Ljava/lang/Object;)Z
+  method public get (Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;)Ljava/lang/Object;
+  method public getHeight ()Ljava/lang/Object;
+  method public getWidth ()Ljava/lang/Object;
+  method public hashCode ()I
+  method public isBoth ()Z
+  method public isNone ()Z
+  method public main (Ldev/vfyjxf/taffy/style/FlexDirection;)Ljava/lang/Object;
+  method public map (Ljava/util/function/Function;)Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public maybeResolve (Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public set (Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;Ljava/lang/Object;)V
+  method public setCross (Ldev/vfyjxf/taffy/style/FlexDirection;Ljava/lang/Object;)V
+  method public setMain (Ldev/vfyjxf/taffy/style/FlexDirection;Ljava/lang/Object;)V
+  method public toString ()Ljava/lang/String;
+  method public zipWith (Ldev/vfyjxf/taffy/geometry/TaffySize;Ljava/util/function/BiFunction;)Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public,static all (Ljava/lang/Object;)Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public,static auto (Ljava/util/function/Supplier;)Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public,static fromCross (Ldev/vfyjxf/taffy/style/FlexDirection;Ljava/lang/Object;)Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public,static fromMainCross (Ldev/vfyjxf/taffy/style/FlexDirection;Ljava/lang/Object;Ljava/lang/Object;)Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public,static maxContent ()Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public,static minContent ()Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public,static none ()Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public,static of (Ljava/lang/Object;Ljava/lang/Object;)Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public,static zero ()Ldev/vfyjxf/taffy/geometry/TaffySize;
+dev/vfyjxf/taffy/style/AlignContent
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final AUTO Ldev/vfyjxf/taffy/style/AlignContent;
+  field public,static,final CENTER Ldev/vfyjxf/taffy/style/AlignContent;
+  field public,static,final END Ldev/vfyjxf/taffy/style/AlignContent;
+  field public,static,final FLEX_END Ldev/vfyjxf/taffy/style/AlignContent;
+  field public,static,final FLEX_START Ldev/vfyjxf/taffy/style/AlignContent;
+  field public,static,final SPACE_AROUND Ldev/vfyjxf/taffy/style/AlignContent;
+  field public,static,final SPACE_BETWEEN Ldev/vfyjxf/taffy/style/AlignContent;
+  field public,static,final SPACE_EVENLY Ldev/vfyjxf/taffy/style/AlignContent;
+  field public,static,final START Ldev/vfyjxf/taffy/style/AlignContent;
+  field public,static,final STRETCH Ldev/vfyjxf/taffy/style/AlignContent;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/AlignContent;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/AlignContent;
+dev/vfyjxf/taffy/style/AlignItems
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final AUTO Ldev/vfyjxf/taffy/style/AlignItems;
+  field public,static,final BASELINE Ldev/vfyjxf/taffy/style/AlignItems;
+  field public,static,final CENTER Ldev/vfyjxf/taffy/style/AlignItems;
+  field public,static,final END Ldev/vfyjxf/taffy/style/AlignItems;
+  field public,static,final FLEX_END Ldev/vfyjxf/taffy/style/AlignItems;
+  field public,static,final FLEX_START Ldev/vfyjxf/taffy/style/AlignItems;
+  field public,static,final START Ldev/vfyjxf/taffy/style/AlignItems;
+  field public,static,final STRETCH Ldev/vfyjxf/taffy/style/AlignItems;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/AlignItems;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/AlignItems;
+dev/vfyjxf/taffy/style/AlignSelf
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final AUTO Ldev/vfyjxf/taffy/style/AlignSelf;
+  field public,static,final BASELINE Ldev/vfyjxf/taffy/style/AlignSelf;
+  field public,static,final CENTER Ldev/vfyjxf/taffy/style/AlignSelf;
+  field public,static,final FLEX_END Ldev/vfyjxf/taffy/style/AlignSelf;
+  field public,static,final FLEX_START Ldev/vfyjxf/taffy/style/AlignSelf;
+  field public,static,final STRETCH Ldev/vfyjxf/taffy/style/AlignSelf;
+  method public toAlignItems ()Ldev/vfyjxf/taffy/style/AlignItems;
+  method public,static fromAlignItems (Ldev/vfyjxf/taffy/style/AlignItems;)Ldev/vfyjxf/taffy/style/AlignSelf;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/AlignSelf;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/AlignSelf;
+dev/vfyjxf/taffy/style/AvailableSpace
+  access public,final
+  extends java/lang/Object
+  field public,static,final MAX_CONTENT Ldev/vfyjxf/taffy/style/AvailableSpace;
+  field public,static,final MIN_CONTENT Ldev/vfyjxf/taffy/style/AvailableSpace;
+  field public,static,final ZERO Ldev/vfyjxf/taffy/style/AvailableSpace;
+  method public equals (Ljava/lang/Object;)Z
+  method public getType ()Ldev/vfyjxf/taffy/style/AvailableSpace$Type;
+  method public getValue ()F
+  method public hashCode ()I
+  method public intoOption ()F
+  method public isDefinite ()Z
+  method public isMaxContent ()Z
+  method public isMinContent ()Z
+  method public isRoughlyEqual (Ldev/vfyjxf/taffy/style/AvailableSpace;)Z
+  method public mapDefiniteValue (Ljava/util/function/Function;)Ldev/vfyjxf/taffy/style/AvailableSpace;
+  method public maybeAdd (F)Ldev/vfyjxf/taffy/style/AvailableSpace;
+  method public maybeMax (F)Ldev/vfyjxf/taffy/style/AvailableSpace;
+  method public maybeMin (F)Ldev/vfyjxf/taffy/style/AvailableSpace;
+  method public maybeSub (F)Ldev/vfyjxf/taffy/style/AvailableSpace;
+  method public toString ()Ljava/lang/String;
+  method public unwrapOr (F)F
+  method public,static definite (F)Ldev/vfyjxf/taffy/style/AvailableSpace;
+  method public,static maxContent ()Ldev/vfyjxf/taffy/style/AvailableSpace;
+  method public,static minContent ()Ldev/vfyjxf/taffy/style/AvailableSpace;
+dev/vfyjxf/taffy/style/AvailableSpace$Type
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final DEFINITE Ldev/vfyjxf/taffy/style/AvailableSpace$Type;
+  field public,static,final MAX_CONTENT Ldev/vfyjxf/taffy/style/AvailableSpace$Type;
+  field public,static,final MIN_CONTENT Ldev/vfyjxf/taffy/style/AvailableSpace$Type;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/AvailableSpace$Type;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/AvailableSpace$Type;
+dev/vfyjxf/taffy/style/BoxGenerationMode
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final DEFAULT Ldev/vfyjxf/taffy/style/BoxGenerationMode;
+  field public,static,final NONE Ldev/vfyjxf/taffy/style/BoxGenerationMode;
+  field public,static,final NORMAL Ldev/vfyjxf/taffy/style/BoxGenerationMode;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/BoxGenerationMode;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/BoxGenerationMode;
+dev/vfyjxf/taffy/style/BoxSizing
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final BORDER_BOX Ldev/vfyjxf/taffy/style/BoxSizing;
+  field public,static,final CONTENT_BOX Ldev/vfyjxf/taffy/style/BoxSizing;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/BoxSizing;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/BoxSizing;
+dev/vfyjxf/taffy/style/CalcExpression
+  access public,abstract,interface
+  extends java/lang/Object
+  method public,abstract resolve (F)F
+  method public,static addPercents (FF)Ldev/vfyjxf/taffy/style/CalcExpression;
+  method public,static fullMinusLength (F)Ldev/vfyjxf/taffy/style/CalcExpression;
+  method public,static fullPlusLength (F)Ldev/vfyjxf/taffy/style/CalcExpression;
+  method public,static percentDividedBy (FF)Ldev/vfyjxf/taffy/style/CalcExpression;
+  method public,static percentMinusLength (FF)Ldev/vfyjxf/taffy/style/CalcExpression;
+  method public,static percentMultipliedBy (FF)Ldev/vfyjxf/taffy/style/CalcExpression;
+  method public,static percentPlusLength (FF)Ldev/vfyjxf/taffy/style/CalcExpression;
+dev/vfyjxf/taffy/style/FlexDirection
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final COLUMN Ldev/vfyjxf/taffy/style/FlexDirection;
+  field public,static,final COLUMN_REVERSE Ldev/vfyjxf/taffy/style/FlexDirection;
+  field public,static,final ROW Ldev/vfyjxf/taffy/style/FlexDirection;
+  field public,static,final ROW_REVERSE Ldev/vfyjxf/taffy/style/FlexDirection;
+  method public crossAxis ()Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;
+  method public isColumn ()Z
+  method public isReverse ()Z
+  method public isRow ()Z
+  method public mainAxis ()Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/FlexDirection;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/FlexDirection;
+dev/vfyjxf/taffy/style/FlexWrap
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final NO_WRAP Ldev/vfyjxf/taffy/style/FlexWrap;
+  field public,static,final WRAP Ldev/vfyjxf/taffy/style/FlexWrap;
+  field public,static,final WRAP_REVERSE Ldev/vfyjxf/taffy/style/FlexWrap;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/FlexWrap;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/FlexWrap;
+dev/vfyjxf/taffy/style/GridAutoFlow
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final COLUMN Ldev/vfyjxf/taffy/style/GridAutoFlow;
+  field public,static,final COLUMN_DENSE Ldev/vfyjxf/taffy/style/GridAutoFlow;
+  field public,static,final ROW Ldev/vfyjxf/taffy/style/GridAutoFlow;
+  field public,static,final ROW_DENSE Ldev/vfyjxf/taffy/style/GridAutoFlow;
+  method public isColumn ()Z
+  method public isDense ()Z
+  method public isRow ()Z
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/GridAutoFlow;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/GridAutoFlow;
+dev/vfyjxf/taffy/style/GridPlacement
+  access public,final
+  extends java/lang/Object
+  field public,static,final AUTO_INSTANCE Ldev/vfyjxf/taffy/style/GridPlacement;
+  method public equals (Ljava/lang/Object;)Z
+  method public getLineName ()Ljava/lang/String;
+  method public getLineNumber ()I
+  method public getNthIndex ()I
+  method public getType ()Ldev/vfyjxf/taffy/style/GridPlacement$Type;
+  method public getValue ()I
+  method public hashCode ()I
+  method public isAuto ()Z
+  method public isDefinite ()Z
+  method public isLine ()Z
+  method public isNamedLine ()Z
+  method public isNamedSpan ()Z
+  method public isSpan ()Z
+  method public toString ()Ljava/lang/String;
+  method public,static auto ()Ldev/vfyjxf/taffy/style/GridPlacement;
+  method public,static line (I)Ldev/vfyjxf/taffy/style/GridPlacement;
+  method public,static namedLine (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/GridPlacement;
+  method public,static namedLine (Ljava/lang/String;I)Ldev/vfyjxf/taffy/style/GridPlacement;
+  method public,static namedSpan (Ljava/lang/String;I)Ldev/vfyjxf/taffy/style/GridPlacement;
+  method public,static span (I)Ldev/vfyjxf/taffy/style/GridPlacement;
+dev/vfyjxf/taffy/style/GridPlacement$Type
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final AUTO Ldev/vfyjxf/taffy/style/GridPlacement$Type;
+  field public,static,final LINE Ldev/vfyjxf/taffy/style/GridPlacement$Type;
+  field public,static,final NAMED_LINE Ldev/vfyjxf/taffy/style/GridPlacement$Type;
+  field public,static,final NAMED_SPAN Ldev/vfyjxf/taffy/style/GridPlacement$Type;
+  field public,static,final SPAN Ldev/vfyjxf/taffy/style/GridPlacement$Type;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/GridPlacement$Type;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/GridPlacement$Type;
+dev/vfyjxf/taffy/style/GridRepetition
+  access public
+  extends java/lang/Object
+  method public equals (Ljava/lang/Object;)Z
+  method public getCount ()I
+  method public getTrackCount ()I
+  method public getTracks ()Ljava/util/List;
+  method public getType ()Ldev/vfyjxf/taffy/style/GridRepetition$RepetitionType;
+  method public hasFixedComponent ()Z
+  method public hashCode ()I
+  method public isAutoRepetition ()Z
+  method public,static autoFill (Ldev/vfyjxf/taffy/style/TrackSizingFunction;)Ldev/vfyjxf/taffy/style/GridRepetition;
+  method public,static autoFill (Ljava/util/List;)Ldev/vfyjxf/taffy/style/GridRepetition;
+  method public,static autoFit (Ldev/vfyjxf/taffy/style/TrackSizingFunction;)Ldev/vfyjxf/taffy/style/GridRepetition;
+  method public,static autoFit (Ljava/util/List;)Ldev/vfyjxf/taffy/style/GridRepetition;
+  method public,static count (ILdev/vfyjxf/taffy/style/TrackSizingFunction;)Ldev/vfyjxf/taffy/style/GridRepetition;
+  method public,static count (ILjava/util/List;)Ldev/vfyjxf/taffy/style/GridRepetition;
+dev/vfyjxf/taffy/style/GridRepetition$RepetitionType
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final AUTO_FILL Ldev/vfyjxf/taffy/style/GridRepetition$RepetitionType;
+  field public,static,final AUTO_FIT Ldev/vfyjxf/taffy/style/GridRepetition$RepetitionType;
+  field public,static,final COUNT Ldev/vfyjxf/taffy/style/GridRepetition$RepetitionType;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/GridRepetition$RepetitionType;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/GridRepetition$RepetitionType;
+dev/vfyjxf/taffy/style/GridTemplateArea
+  access public,final
+  extends java/lang/Object
+  method public <init> (Ljava/lang/String;IIII)V
+  method public equals (Ljava/lang/Object;)Z
+  method public getColumnEnd ()I
+  method public getColumnStart ()I
+  method public getName ()Ljava/lang/String;
+  method public getRowEnd ()I
+  method public getRowStart ()I
+  method public hashCode ()I
+  method public toString ()Ljava/lang/String;
+dev/vfyjxf/taffy/style/GridTemplateComponent
+  access public
+  extends java/lang/Object
+  method public equals (Ljava/lang/Object;)Z
+  method public getRepeat ()Ldev/vfyjxf/taffy/style/GridRepetition;
+  method public getSingle ()Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  method public getType ()Ldev/vfyjxf/taffy/style/GridTemplateComponent$Type;
+  method public hasFixedComponent ()Z
+  method public hashCode ()I
+  method public isAutoRepetition ()Z
+  method public isRepeat ()Z
+  method public isSingle ()Z
+  method public,static autoFill ([Ldev/vfyjxf/taffy/style/TrackSizingFunction;)Ldev/vfyjxf/taffy/style/GridTemplateComponent;
+  method public,static autoFit ([Ldev/vfyjxf/taffy/style/TrackSizingFunction;)Ldev/vfyjxf/taffy/style/GridTemplateComponent;
+  method public,static repeat (Ldev/vfyjxf/taffy/style/GridRepetition;)Ldev/vfyjxf/taffy/style/GridTemplateComponent;
+  method public,static repeatCount (I[Ldev/vfyjxf/taffy/style/TrackSizingFunction;)Ldev/vfyjxf/taffy/style/GridTemplateComponent;
+  method public,static single (Ldev/vfyjxf/taffy/style/TrackSizingFunction;)Ldev/vfyjxf/taffy/style/GridTemplateComponent;
+dev/vfyjxf/taffy/style/GridTemplateComponent$Type
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final REPEAT Ldev/vfyjxf/taffy/style/GridTemplateComponent$Type;
+  field public,static,final SINGLE Ldev/vfyjxf/taffy/style/GridTemplateComponent$Type;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/GridTemplateComponent$Type;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/GridTemplateComponent$Type;
+dev/vfyjxf/taffy/style/JustifyContent
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final CENTER Ldev/vfyjxf/taffy/style/JustifyContent;
+  field public,static,final END Ldev/vfyjxf/taffy/style/JustifyContent;
+  field public,static,final FLEX_END Ldev/vfyjxf/taffy/style/JustifyContent;
+  field public,static,final FLEX_START Ldev/vfyjxf/taffy/style/JustifyContent;
+  field public,static,final SPACE_AROUND Ldev/vfyjxf/taffy/style/JustifyContent;
+  field public,static,final SPACE_BETWEEN Ldev/vfyjxf/taffy/style/JustifyContent;
+  field public,static,final SPACE_EVENLY Ldev/vfyjxf/taffy/style/JustifyContent;
+  field public,static,final START Ldev/vfyjxf/taffy/style/JustifyContent;
+  field public,static,final STRETCH Ldev/vfyjxf/taffy/style/JustifyContent;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/JustifyContent;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/JustifyContent;
+dev/vfyjxf/taffy/style/LengthPercentage
+  access public,final
+  extends java/lang/Object
+  field public,static,final ZERO Ldev/vfyjxf/taffy/style/LengthPercentage;
+  method public equals (Ljava/lang/Object;)Z
+  method public getCalcExpression ()Ldev/vfyjxf/taffy/style/CalcExpression;
+  method public getType ()Ldev/vfyjxf/taffy/style/LengthPercentage$Type;
+  method public getValue ()F
+  method public hashCode ()I
+  method public isCalc ()Z
+  method public isLength ()Z
+  method public isPercent ()Z
+  method public maybeResolve (F)F
+  method public resolve (F)F
+  method public resolveOrZero (F)F
+  method public toString ()Ljava/lang/String;
+  method public,static calc (Ldev/vfyjxf/taffy/style/CalcExpression;)Ldev/vfyjxf/taffy/style/LengthPercentage;
+  method public,static length (F)Ldev/vfyjxf/taffy/style/LengthPercentage;
+  method public,static percent (F)Ldev/vfyjxf/taffy/style/LengthPercentage;
+dev/vfyjxf/taffy/style/LengthPercentage$Type
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final CALC Ldev/vfyjxf/taffy/style/LengthPercentage$Type;
+  field public,static,final LENGTH Ldev/vfyjxf/taffy/style/LengthPercentage$Type;
+  field public,static,final PERCENT Ldev/vfyjxf/taffy/style/LengthPercentage$Type;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/LengthPercentage$Type;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/LengthPercentage$Type;
+dev/vfyjxf/taffy/style/LengthPercentageAuto
+  access public,final
+  extends java/lang/Object
+  field public,static,final AUTO Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+  field public,static,final FIT_CONTENT Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+  field public,static,final MAX_CONTENT Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+  field public,static,final MIN_CONTENT Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+  field public,static,final STRETCH Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+  field public,static,final ZERO Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+  method public equals (Ljava/lang/Object;)Z
+  method public getCalcExpression ()Ldev/vfyjxf/taffy/style/CalcExpression;
+  method public getType ()Ldev/vfyjxf/taffy/style/LengthPercentageAuto$Type;
+  method public getValue ()F
+  method public hashCode ()I
+  method public isAuto ()Z
+  method public isCalc ()Z
+  method public isFitContent ()Z
+  method public isIntrinsic ()Z
+  method public isLength ()Z
+  method public isMaxContent ()Z
+  method public isMinContent ()Z
+  method public isPercent ()Z
+  method public isStretch ()Z
+  method public maybeResolve (F)F
+  method public resolveOrZero (F)F
+  method public resolveToOption (F)F
+  method public toString ()Ljava/lang/String;
+  method public,static auto ()Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+  method public,static calc (Ldev/vfyjxf/taffy/style/CalcExpression;)Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+  method public,static fitContent ()Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+  method public,static from (Ldev/vfyjxf/taffy/style/LengthPercentage;)Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+  method public,static length (F)Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+  method public,static maxContent ()Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+  method public,static minContent ()Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+  method public,static percent (F)Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+  method public,static stretch ()Ldev/vfyjxf/taffy/style/LengthPercentageAuto;
+dev/vfyjxf/taffy/style/LengthPercentageAuto$Type
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final AUTO Ldev/vfyjxf/taffy/style/LengthPercentageAuto$Type;
+  field public,static,final CALC Ldev/vfyjxf/taffy/style/LengthPercentageAuto$Type;
+  field public,static,final FIT_CONTENT Ldev/vfyjxf/taffy/style/LengthPercentageAuto$Type;
+  field public,static,final LENGTH Ldev/vfyjxf/taffy/style/LengthPercentageAuto$Type;
+  field public,static,final MAX_CONTENT Ldev/vfyjxf/taffy/style/LengthPercentageAuto$Type;
+  field public,static,final MIN_CONTENT Ldev/vfyjxf/taffy/style/LengthPercentageAuto$Type;
+  field public,static,final PERCENT Ldev/vfyjxf/taffy/style/LengthPercentageAuto$Type;
+  field public,static,final STRETCH Ldev/vfyjxf/taffy/style/LengthPercentageAuto$Type;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/LengthPercentageAuto$Type;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/LengthPercentageAuto$Type;
+dev/vfyjxf/taffy/style/NamedGridLine
+  access public,final
+  extends java/lang/Object
+  method public <init> (Ljava/lang/String;I)V
+  method public equals (Ljava/lang/Object;)Z
+  method public getIndex ()I
+  method public getName ()Ljava/lang/String;
+  method public hashCode ()I
+  method public toString ()Ljava/lang/String;
+dev/vfyjxf/taffy/style/Overflow
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final CLIP Ldev/vfyjxf/taffy/style/Overflow;
+  field public,static,final HIDDEN Ldev/vfyjxf/taffy/style/Overflow;
+  field public,static,final SCROLL Ldev/vfyjxf/taffy/style/Overflow;
+  field public,static,final VISIBLE Ldev/vfyjxf/taffy/style/Overflow;
+  method public isScrollContainer ()Z
+  method public maybeIntoAutomaticMinSize ()Ljava/lang/Float;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/Overflow;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/Overflow;
+dev/vfyjxf/taffy/style/TaffyDimension
+  access public,final
+  extends java/lang/Object
+  field public,static,final AUTO Ldev/vfyjxf/taffy/style/TaffyDimension;
+  field public,static,final CONTENT Ldev/vfyjxf/taffy/style/TaffyDimension;
+  field public,static,final FIT_CONTENT Ldev/vfyjxf/taffy/style/TaffyDimension;
+  field public,static,final MAX_CONTENT Ldev/vfyjxf/taffy/style/TaffyDimension;
+  field public,static,final MIN_CONTENT Ldev/vfyjxf/taffy/style/TaffyDimension;
+  field public,static,final STRETCH Ldev/vfyjxf/taffy/style/TaffyDimension;
+  field public,static,final ZERO Ldev/vfyjxf/taffy/style/TaffyDimension;
+  method public equals (Ljava/lang/Object;)Z
+  method public getCalcExpression ()Ldev/vfyjxf/taffy/style/CalcExpression;
+  method public getType ()Ldev/vfyjxf/taffy/style/TaffyDimension$Type;
+  method public getValue ()F
+  method public hashCode ()I
+  method public intoOption ()F
+  method public isAuto ()Z
+  method public isCalc ()Z
+  method public isContent ()Z
+  method public isFitContent ()Z
+  method public isIntrinsic ()Z
+  method public isLength ()Z
+  method public isMaxContent ()Z
+  method public isMinContent ()Z
+  method public isPercent ()Z
+  method public isStretch ()Z
+  method public maybeResolve (F)F
+  method public resolveOrZero (F)F
+  method public toString ()Ljava/lang/String;
+  method public,static auto ()Ldev/vfyjxf/taffy/style/TaffyDimension;
+  method public,static calc (Ldev/vfyjxf/taffy/style/CalcExpression;)Ldev/vfyjxf/taffy/style/TaffyDimension;
+  method public,static content ()Ldev/vfyjxf/taffy/style/TaffyDimension;
+  method public,static fitContent ()Ldev/vfyjxf/taffy/style/TaffyDimension;
+  method public,static from (Ldev/vfyjxf/taffy/style/LengthPercentage;)Ldev/vfyjxf/taffy/style/TaffyDimension;
+  method public,static from (Ldev/vfyjxf/taffy/style/LengthPercentageAuto;)Ldev/vfyjxf/taffy/style/TaffyDimension;
+  method public,static length (F)Ldev/vfyjxf/taffy/style/TaffyDimension;
+  method public,static maxContent ()Ldev/vfyjxf/taffy/style/TaffyDimension;
+  method public,static minContent ()Ldev/vfyjxf/taffy/style/TaffyDimension;
+  method public,static percent (F)Ldev/vfyjxf/taffy/style/TaffyDimension;
+  method public,static stretch ()Ldev/vfyjxf/taffy/style/TaffyDimension;
+dev/vfyjxf/taffy/style/TaffyDimension$Type
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final AUTO Ldev/vfyjxf/taffy/style/TaffyDimension$Type;
+  field public,static,final CALC Ldev/vfyjxf/taffy/style/TaffyDimension$Type;
+  field public,static,final CONTENT Ldev/vfyjxf/taffy/style/TaffyDimension$Type;
+  field public,static,final FIT_CONTENT Ldev/vfyjxf/taffy/style/TaffyDimension$Type;
+  field public,static,final LENGTH Ldev/vfyjxf/taffy/style/TaffyDimension$Type;
+  field public,static,final MAX_CONTENT Ldev/vfyjxf/taffy/style/TaffyDimension$Type;
+  field public,static,final MIN_CONTENT Ldev/vfyjxf/taffy/style/TaffyDimension$Type;
+  field public,static,final PERCENT Ldev/vfyjxf/taffy/style/TaffyDimension$Type;
+  field public,static,final STRETCH Ldev/vfyjxf/taffy/style/TaffyDimension$Type;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/TaffyDimension$Type;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/TaffyDimension$Type;
+dev/vfyjxf/taffy/style/TaffyDirection
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final DEFAULT Ldev/vfyjxf/taffy/style/TaffyDirection;
+  field public,static,final INHERIT Ldev/vfyjxf/taffy/style/TaffyDirection;
+  field public,static,final LTR Ldev/vfyjxf/taffy/style/TaffyDirection;
+  field public,static,final RTL Ldev/vfyjxf/taffy/style/TaffyDirection;
+  method public isInherit ()Z
+  method public isLtr ()Z
+  method public isRtl ()Z
+  method public opposite ()Ldev/vfyjxf/taffy/style/TaffyDirection;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/TaffyDirection;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/TaffyDirection;
+dev/vfyjxf/taffy/style/TaffyDisplay
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final BLOCK Ldev/vfyjxf/taffy/style/TaffyDisplay;
+  field public,static,final DEFAULT Ldev/vfyjxf/taffy/style/TaffyDisplay;
+  field public,static,final FLEX Ldev/vfyjxf/taffy/style/TaffyDisplay;
+  field public,static,final GRID Ldev/vfyjxf/taffy/style/TaffyDisplay;
+  field public,static,final NONE Ldev/vfyjxf/taffy/style/TaffyDisplay;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/TaffyDisplay;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/TaffyDisplay;
+dev/vfyjxf/taffy/style/TaffyPosition
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final ABSOLUTE Ldev/vfyjxf/taffy/style/TaffyPosition;
+  field public,static,final RELATIVE Ldev/vfyjxf/taffy/style/TaffyPosition;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/TaffyPosition;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/TaffyPosition;
+dev/vfyjxf/taffy/style/TaffyStyle
+  access public,final
+  extends java/lang/Object
+  field public alignContent Ldev/vfyjxf/taffy/style/AlignContent;
+  field public alignItems Ldev/vfyjxf/taffy/style/AlignItems;
+  field public alignSelf Ldev/vfyjxf/taffy/style/AlignItems;
+  field public aspectRatio F
+  field public border Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  field public boxSizing Ldev/vfyjxf/taffy/style/BoxSizing;
+  field public direction Ldev/vfyjxf/taffy/style/TaffyDirection;
+  field public display Ldev/vfyjxf/taffy/style/TaffyDisplay;
+  field public flex F
+  field public flexBasis Ldev/vfyjxf/taffy/style/TaffyDimension;
+  field public flexDirection Ldev/vfyjxf/taffy/style/FlexDirection;
+  field public flexGrow F
+  field public flexShrink F
+  field public flexWrap Ldev/vfyjxf/taffy/style/FlexWrap;
+  field public gap Ldev/vfyjxf/taffy/geometry/TaffySize;
+  field public gridAutoColumns Ljava/util/List;
+  field public gridAutoFlow Ldev/vfyjxf/taffy/style/GridAutoFlow;
+  field public gridAutoRows Ljava/util/List;
+  field public gridColumn Ldev/vfyjxf/taffy/geometry/TaffyLine;
+  field public gridRow Ldev/vfyjxf/taffy/geometry/TaffyLine;
+  field public gridTemplateAreas Ljava/util/List;
+  field public gridTemplateColumnNames Ljava/util/List;
+  field public gridTemplateColumns Ljava/util/List;
+  field public gridTemplateColumnsWithRepeat Ljava/util/List;
+  field public gridTemplateRowNames Ljava/util/List;
+  field public gridTemplateRows Ljava/util/List;
+  field public gridTemplateRowsWithRepeat Ljava/util/List;
+  field public inset Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  field public itemIsReplaced Z
+  field public itemIsTable Z
+  field public justifyContent Ldev/vfyjxf/taffy/style/AlignContent;
+  field public justifyItems Ldev/vfyjxf/taffy/style/AlignItems;
+  field public justifySelf Ldev/vfyjxf/taffy/style/AlignItems;
+  field public margin Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  field public maxSize Ldev/vfyjxf/taffy/geometry/TaffySize;
+  field public minSize Ldev/vfyjxf/taffy/geometry/TaffySize;
+  field public overflow Ldev/vfyjxf/taffy/geometry/TaffyPoint;
+  field public padding Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  field public position Ldev/vfyjxf/taffy/style/TaffyPosition;
+  field public scrollbarWidth F
+  field public size Ldev/vfyjxf/taffy/geometry/TaffySize;
+  field public textAlign Ldev/vfyjxf/taffy/style/TextAlign;
+  method public <init> ()V
+  method public boxGenerationMode ()Ldev/vfyjxf/taffy/style/BoxGenerationMode;
+  method public clearFlex ()Ldev/vfyjxf/taffy/style/TaffyStyle;
+  method public copy ()Ldev/vfyjxf/taffy/style/TaffyStyle;
+  method public flex (F)Ldev/vfyjxf/taffy/style/TaffyStyle;
+  method public flex (FF)Ldev/vfyjxf/taffy/style/TaffyStyle;
+  method public flex (FFF)Ldev/vfyjxf/taffy/style/TaffyStyle;
+  method public flex (FFLdev/vfyjxf/taffy/style/TaffyDimension;)Ldev/vfyjxf/taffy/style/TaffyStyle;
+  method public flexAuto ()Ldev/vfyjxf/taffy/style/TaffyStyle;
+  method public flexInitial ()Ldev/vfyjxf/taffy/style/TaffyStyle;
+  method public flexNone ()Ldev/vfyjxf/taffy/style/TaffyStyle;
+  method public getAlignContent ()Ldev/vfyjxf/taffy/style/AlignContent;
+  method public getAlignItems ()Ldev/vfyjxf/taffy/style/AlignItems;
+  method public getAlignSelf ()Ldev/vfyjxf/taffy/style/AlignItems;
+  method public getAspectRatio ()F
+  method public getBorder ()Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public getBoxGenerationMode ()Ldev/vfyjxf/taffy/style/BoxGenerationMode;
+  method public getBoxSizing ()Ldev/vfyjxf/taffy/style/BoxSizing;
+  method public getDirection ()Ldev/vfyjxf/taffy/style/TaffyDirection;
+  method public getDisplay ()Ldev/vfyjxf/taffy/style/TaffyDisplay;
+  method public getEffectiveFlexBasis ()Ldev/vfyjxf/taffy/style/TaffyDimension;
+  method public getEffectiveFlexGrow ()F
+  method public getEffectiveFlexShrink ()F
+  method public getFlex ()F
+  method public getFlexBasis ()Ldev/vfyjxf/taffy/style/TaffyDimension;
+  method public getFlexDirection ()Ldev/vfyjxf/taffy/style/FlexDirection;
+  method public getFlexGrow ()F
+  method public getFlexShrink ()F
+  method public getFlexWrap ()Ldev/vfyjxf/taffy/style/FlexWrap;
+  method public getGap ()Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public getGridAutoColumns ()Ljava/util/List;
+  method public getGridAutoFlow ()Ldev/vfyjxf/taffy/style/GridAutoFlow;
+  method public getGridAutoRows ()Ljava/util/List;
+  method public getGridColumnEnd ()Ldev/vfyjxf/taffy/style/GridPlacement;
+  method public getGridColumnStart ()Ldev/vfyjxf/taffy/style/GridPlacement;
+  method public getGridRowEnd ()Ldev/vfyjxf/taffy/style/GridPlacement;
+  method public getGridRowStart ()Ldev/vfyjxf/taffy/style/GridPlacement;
+  method public getGridTemplateColumns ()Ljava/util/List;
+  method public getGridTemplateRows ()Ljava/util/List;
+  method public getInset ()Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public getItemIsReplaced ()Z
+  method public getItemIsTable ()Z
+  method public getJustifyContent ()Ldev/vfyjxf/taffy/style/JustifyContent;
+  method public getMargin ()Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public getMaxSize ()Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public getMinSize ()Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public getOverflow ()Ldev/vfyjxf/taffy/geometry/TaffyPoint;
+  method public getPadding ()Ldev/vfyjxf/taffy/geometry/TaffyRect;
+  method public getPosition ()Ldev/vfyjxf/taffy/style/TaffyPosition;
+  method public getScrollbarWidth ()F
+  method public getSize ()Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public getTextAlign ()Ldev/vfyjxf/taffy/style/TextAlign;
+  method public hasAspectRatio ()Z
+  method public isBlock ()Z
+  method public setFlex (F)Ldev/vfyjxf/taffy/style/TaffyStyle;
+  method public toString ()Ljava/lang/String;
+dev/vfyjxf/taffy/style/TextAlign
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final AUTO Ldev/vfyjxf/taffy/style/TextAlign;
+  field public,static,final CENTER Ldev/vfyjxf/taffy/style/TextAlign;
+  field public,static,final END Ldev/vfyjxf/taffy/style/TextAlign;
+  field public,static,final JUSTIFY Ldev/vfyjxf/taffy/style/TextAlign;
+  field public,static,final JUSTIFY_ALL Ldev/vfyjxf/taffy/style/TextAlign;
+  field public,static,final LEFT Ldev/vfyjxf/taffy/style/TextAlign;
+  field public,static,final RIGHT Ldev/vfyjxf/taffy/style/TextAlign;
+  field public,static,final START Ldev/vfyjxf/taffy/style/TextAlign;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/TextAlign;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/TextAlign;
+dev/vfyjxf/taffy/style/TrackSizingFunction
+  access public,final
+  extends java/lang/Object
+  field public,static,final AUTO Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  field public,static,final MAX_CONTENT Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  field public,static,final MIN_CONTENT Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  method public equals (Ljava/lang/Object;)Z
+  method public getDefiniteValue (F)F
+  method public getFitContentArgument ()Ldev/vfyjxf/taffy/style/LengthPercentage;
+  method public getFixedValue ()Ldev/vfyjxf/taffy/style/LengthPercentage;
+  method public getFlexValue ()F
+  method public getFrValue ()F
+  method public getLengthValue ()Ldev/vfyjxf/taffy/style/LengthPercentage;
+  method public getMaxFunc ()Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  method public getMinFunc ()Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  method public getType ()Ldev/vfyjxf/taffy/style/TrackSizingFunction$Type;
+  method public hasFixedComponent ()Z
+  method public hasIntrinsicSizingFunction ()Z
+  method public hashCode ()I
+  method public isAuto ()Z
+  method public isFitContent ()Z
+  method public isFixed ()Z
+  method public isFlexible ()Z
+  method public isFr ()Z
+  method public isIntrinsic ()Z
+  method public isMaxContent ()Z
+  method public isMinContent ()Z
+  method public isMinmax ()Z
+  method public toString ()Ljava/lang/String;
+  method public usesPercentage ()Z
+  method public,static auto ()Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  method public,static fitContent (Ldev/vfyjxf/taffy/style/LengthPercentage;)Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  method public,static fixed (F)Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  method public,static fixed (Ldev/vfyjxf/taffy/style/LengthPercentage;)Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  method public,static flex (F)Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  method public,static fr (F)Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  method public,static maxContent ()Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  method public,static minContent ()Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  method public,static minmax (Ldev/vfyjxf/taffy/style/TrackSizingFunction;Ldev/vfyjxf/taffy/style/TrackSizingFunction;)Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+  method public,static percent (F)Ldev/vfyjxf/taffy/style/TrackSizingFunction;
+dev/vfyjxf/taffy/style/TrackSizingFunction$Type
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final AUTO Ldev/vfyjxf/taffy/style/TrackSizingFunction$Type;
+  field public,static,final FIT_CONTENT Ldev/vfyjxf/taffy/style/TrackSizingFunction$Type;
+  field public,static,final FIXED Ldev/vfyjxf/taffy/style/TrackSizingFunction$Type;
+  field public,static,final FLEX Ldev/vfyjxf/taffy/style/TrackSizingFunction$Type;
+  field public,static,final MAX_CONTENT Ldev/vfyjxf/taffy/style/TrackSizingFunction$Type;
+  field public,static,final MINMAX Ldev/vfyjxf/taffy/style/TrackSizingFunction$Type;
+  field public,static,final MIN_CONTENT Ldev/vfyjxf/taffy/style/TrackSizingFunction$Type;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/style/TrackSizingFunction$Type;
+  method public,static values ()[Ldev/vfyjxf/taffy/style/TrackSizingFunction$Type;
+dev/vfyjxf/taffy/tree/BlockComputer
+  access public
+  extends java/lang/Object
+  method public <init> (Ldev/vfyjxf/taffy/tree/LayoutComputer;)V
+  method public compute (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/tree/LayoutInput;Ldev/vfyjxf/taffy/style/TaffyStyle;)Ldev/vfyjxf/taffy/tree/LayoutOutput;
+dev/vfyjxf/taffy/tree/CollapsibleMarginSet
+  access public,final
+  extends java/lang/Object
+  field public,static,final ZERO Ldev/vfyjxf/taffy/tree/CollapsibleMarginSet;
+  method public collapseWithMargin (F)Ldev/vfyjxf/taffy/tree/CollapsibleMarginSet;
+  method public collapseWithSet (Ldev/vfyjxf/taffy/tree/CollapsibleMarginSet;)Ldev/vfyjxf/taffy/tree/CollapsibleMarginSet;
+  method public copy ()Ldev/vfyjxf/taffy/tree/CollapsibleMarginSet;
+  method public resolve ()F
+  method public toString ()Ljava/lang/String;
+  method public,static fromMargin (F)Ldev/vfyjxf/taffy/tree/CollapsibleMarginSet;
+  method public,static zero ()Ldev/vfyjxf/taffy/tree/CollapsibleMarginSet;
+dev/vfyjxf/taffy/tree/FlexboxComputer
+  access public
+  extends java/lang/Object
+  method public <init> (Ldev/vfyjxf/taffy/tree/LayoutComputer;)V
+  method public compute (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/tree/LayoutInput;Ldev/vfyjxf/taffy/style/TaffyStyle;)Ldev/vfyjxf/taffy/tree/LayoutOutput;
+dev/vfyjxf/taffy/tree/GridComputer
+  access public
+  extends java/lang/Object
+  method public <init> (Ldev/vfyjxf/taffy/tree/LayoutComputer;)V
+  method public compute (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/tree/LayoutInput;Ldev/vfyjxf/taffy/style/TaffyStyle;)Ldev/vfyjxf/taffy/tree/LayoutOutput;
+dev/vfyjxf/taffy/tree/Layout
+  access public,final,record
+  extends java/lang/Record
+  method public <init> ()V
+  method public <init> (I)V
+  method public <init> (ILdev/vfyjxf/taffy/geometry/FloatPoint;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatRect;Ldev/vfyjxf/taffy/geometry/FloatRect;Ldev/vfyjxf/taffy/geometry/FloatRect;)V
+  method public border ()Ldev/vfyjxf/taffy/geometry/FloatRect;
+  method public contentBoxHeight ()F
+  method public contentBoxSize ()Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public contentBoxWidth ()F
+  method public contentBoxX ()F
+  method public contentBoxY ()F
+  method public contentSize ()Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public copy ()Ldev/vfyjxf/taffy/tree/Layout;
+  method public location ()Ldev/vfyjxf/taffy/geometry/FloatPoint;
+  method public margin ()Ldev/vfyjxf/taffy/geometry/FloatRect;
+  method public order ()I
+  method public padding ()Ldev/vfyjxf/taffy/geometry/FloatRect;
+  method public scrollHeight ()F
+  method public scrollWidth ()F
+  method public scrollbarSize ()Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public size ()Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public toString ()Ljava/lang/String;
+  method public,final equals (Ljava/lang/Object;)Z
+  method public,final hashCode ()I
+  method public,static withOrder (I)Ldev/vfyjxf/taffy/tree/Layout;
+dev/vfyjxf/taffy/tree/LayoutCache
+  access public,final
+  extends java/lang/Object
+  method public <init> ()V
+  method public clear ()Z
+  method public get (Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/TaffySize;Ldev/vfyjxf/taffy/tree/RunMode;)Ldev/vfyjxf/taffy/tree/LayoutOutput;
+  method public isEmpty ()Z
+  method public store (Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/TaffySize;Ldev/vfyjxf/taffy/tree/RunMode;Ldev/vfyjxf/taffy/tree/LayoutOutput;)V
+dev/vfyjxf/taffy/tree/LayoutChangeListener
+  access public,abstract,interface
+  extends java/lang/Object
+  method public,abstract onLayoutChanged (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/tree/Layout;Ldev/vfyjxf/taffy/tree/Layout;)V
+dev/vfyjxf/taffy/tree/LayoutComputer
+  access public
+  extends java/lang/Object
+  method public <init> (Ldev/vfyjxf/taffy/tree/TaffyTree;Ldev/vfyjxf/taffy/util/MeasureFunc;)V
+  method public computeChildLayout (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/tree/LayoutInput;)Ldev/vfyjxf/taffy/tree/LayoutOutput;
+  method public computeHiddenLayout (Ldev/vfyjxf/taffy/tree/NodeId;)Ldev/vfyjxf/taffy/tree/LayoutOutput;
+  method public computeLayout (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/geometry/TaffySize;)V
+  method public getTree ()Ldev/vfyjxf/taffy/tree/TaffyTree;
+  method public measureChildSize (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/TaffySize;Ldev/vfyjxf/taffy/tree/SizingMode;Ldev/vfyjxf/taffy/geometry/TaffyLine;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public performChildLayout (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/TaffySize;Ldev/vfyjxf/taffy/tree/SizingMode;Ldev/vfyjxf/taffy/geometry/TaffyLine;)Ldev/vfyjxf/taffy/tree/LayoutOutput;
+  method public resolveDirection (Ldev/vfyjxf/taffy/tree/NodeId;)Ldev/vfyjxf/taffy/style/TaffyDirection;
+dev/vfyjxf/taffy/tree/LayoutInput
+  access public,final,record
+  extends java/lang/Record
+  field public,static,final HIDDEN Ldev/vfyjxf/taffy/tree/LayoutInput;
+  method public <init> (Ldev/vfyjxf/taffy/tree/RunMode;Ldev/vfyjxf/taffy/tree/SizingMode;Ldev/vfyjxf/taffy/tree/RequestedAxis;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/TaffySize;Ldev/vfyjxf/taffy/geometry/TaffyLine;)V
+  method public availableSpace ()Ldev/vfyjxf/taffy/geometry/TaffySize;
+  method public axis ()Ldev/vfyjxf/taffy/tree/RequestedAxis;
+  method public knownDimensions ()Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public parentSize ()Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public runMode ()Ldev/vfyjxf/taffy/tree/RunMode;
+  method public sizingMode ()Ldev/vfyjxf/taffy/tree/SizingMode;
+  method public toString ()Ljava/lang/String;
+  method public verticalMarginsAreCollapsible ()Ldev/vfyjxf/taffy/geometry/TaffyLine;
+  method public withAvailableSpace (Ldev/vfyjxf/taffy/geometry/TaffySize;)Ldev/vfyjxf/taffy/tree/LayoutInput;
+  method public withKnownDimensions (Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/tree/LayoutInput;
+  method public,final equals (Ljava/lang/Object;)Z
+  method public,final hashCode ()I
+  method public,static hidden ()Ldev/vfyjxf/taffy/tree/LayoutInput;
+dev/vfyjxf/taffy/tree/LayoutOutput
+  access public,final,record
+  extends java/lang/Record
+  field public,static,final DEFAULT Ldev/vfyjxf/taffy/tree/LayoutOutput;
+  field public,static,final HIDDEN Ldev/vfyjxf/taffy/tree/LayoutOutput;
+  method public <init> (Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatPoint;Ldev/vfyjxf/taffy/tree/CollapsibleMarginSet;Ldev/vfyjxf/taffy/tree/CollapsibleMarginSet;Z)V
+  method public bottomMargin ()Ldev/vfyjxf/taffy/tree/CollapsibleMarginSet;
+  method public contentSize ()Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public firstBaselines ()Ldev/vfyjxf/taffy/geometry/FloatPoint;
+  method public marginsCanCollapseThrough ()Z
+  method public size ()Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public toString ()Ljava/lang/String;
+  method public topMargin ()Ldev/vfyjxf/taffy/tree/CollapsibleMarginSet;
+  method public,final equals (Ljava/lang/Object;)Z
+  method public,final hashCode ()I
+  method public,static fromOuterSize (Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/tree/LayoutOutput;
+  method public,static fromSizes (Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/tree/LayoutOutput;
+  method public,static fromSizesAndBaselines (Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatPoint;)Ldev/vfyjxf/taffy/tree/LayoutOutput;
+  method public,static hidden ()Ldev/vfyjxf/taffy/tree/LayoutOutput;
+dev/vfyjxf/taffy/tree/NodeData
+  access public
+  extends java/lang/Object
+  method public <init> (Ldev/vfyjxf/taffy/style/TaffyStyle;)V
+  method public acknowledgeLayout ()V
+  method public clearDirtyDescendant ()V
+  method public getCache ()Ldev/vfyjxf/taffy/tree/LayoutCache;
+  method public getFinalLayout ()Ldev/vfyjxf/taffy/tree/Layout;
+  method public getStyle ()Ldev/vfyjxf/taffy/style/TaffyStyle;
+  method public getUnroundedLayout ()Ldev/vfyjxf/taffy/tree/Layout;
+  method public hasContext ()Z
+  method public hasDirtyDescendant ()Z
+  method public hasNewLayout ()Z
+  method public markDirty ()Z
+  method public needsVisit ()Z
+  method public setFinalLayout (Ldev/vfyjxf/taffy/tree/Layout;)V
+  method public setHasContext (Z)V
+  method public setStyle (Ldev/vfyjxf/taffy/style/TaffyStyle;)V
+  method public setUnroundedLayout (Ldev/vfyjxf/taffy/tree/Layout;)V
+dev/vfyjxf/taffy/tree/NodeId
+  access public,final,record
+  extends java/lang/Record
+  method public <init> (J)V
+  method public getId ()J
+  method public toIndex ()I
+  method public value ()J
+  method public,final equals (Ljava/lang/Object;)Z
+  method public,final hashCode ()I
+  method public,final toString ()Ljava/lang/String;
+  method public,static of (J)Ldev/vfyjxf/taffy/tree/NodeId;
+dev/vfyjxf/taffy/tree/RequestedAxis
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final BOTH Ldev/vfyjxf/taffy/tree/RequestedAxis;
+  field public,static,final HORIZONTAL Ldev/vfyjxf/taffy/tree/RequestedAxis;
+  field public,static,final VERTICAL Ldev/vfyjxf/taffy/tree/RequestedAxis;
+  method public toAbsoluteAxis ()Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;
+  method public,static from (Ldev/vfyjxf/taffy/geometry/AbsoluteAxis;)Ldev/vfyjxf/taffy/tree/RequestedAxis;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/tree/RequestedAxis;
+  method public,static values ()[Ldev/vfyjxf/taffy/tree/RequestedAxis;
+dev/vfyjxf/taffy/tree/RunMode
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final COMPUTE_SIZE Ldev/vfyjxf/taffy/tree/RunMode;
+  field public,static,final PERFORM_HIDDEN_LAYOUT Ldev/vfyjxf/taffy/tree/RunMode;
+  field public,static,final PERFORM_LAYOUT Ldev/vfyjxf/taffy/tree/RunMode;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/tree/RunMode;
+  method public,static values ()[Ldev/vfyjxf/taffy/tree/RunMode;
+dev/vfyjxf/taffy/tree/SizingMode
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final CONTENT_SIZE Ldev/vfyjxf/taffy/tree/SizingMode;
+  field public,static,final INHERENT_SIZE Ldev/vfyjxf/taffy/tree/SizingMode;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/tree/SizingMode;
+  method public,static values ()[Ldev/vfyjxf/taffy/tree/SizingMode;
+dev/vfyjxf/taffy/tree/TaffyException
+  access public
+  extends java/lang/RuntimeException
+  method public getChildCount ()Ljava/lang/Integer;
+  method public getChildIndex ()Ljava/lang/Integer;
+  method public getChildNode ()Ldev/vfyjxf/taffy/tree/NodeId;
+  method public getParentNode ()Ldev/vfyjxf/taffy/tree/NodeId;
+  method public getType ()Ldev/vfyjxf/taffy/tree/TaffyException$ErrorType;
+  method public,static childIndexOutOfBounds (Ldev/vfyjxf/taffy/tree/NodeId;II)Ldev/vfyjxf/taffy/tree/TaffyException;
+  method public,static invalidChildNode (Ldev/vfyjxf/taffy/tree/NodeId;)Ldev/vfyjxf/taffy/tree/TaffyException;
+  method public,static invalidInputNode (Ldev/vfyjxf/taffy/tree/NodeId;)Ldev/vfyjxf/taffy/tree/TaffyException;
+  method public,static invalidParentNode (Ldev/vfyjxf/taffy/tree/NodeId;)Ldev/vfyjxf/taffy/tree/TaffyException;
+dev/vfyjxf/taffy/tree/TaffyException$ErrorType
+  access public,final,enum
+  extends java/lang/Enum
+  field public,static,final CHILD_INDEX_OUT_OF_BOUNDS Ldev/vfyjxf/taffy/tree/TaffyException$ErrorType;
+  field public,static,final INVALID_CHILD_NODE Ldev/vfyjxf/taffy/tree/TaffyException$ErrorType;
+  field public,static,final INVALID_INPUT_NODE Ldev/vfyjxf/taffy/tree/TaffyException$ErrorType;
+  field public,static,final INVALID_PARENT_NODE Ldev/vfyjxf/taffy/tree/TaffyException$ErrorType;
+  method public,static valueOf (Ljava/lang/String;)Ldev/vfyjxf/taffy/tree/TaffyException$ErrorType;
+  method public,static values ()[Ldev/vfyjxf/taffy/tree/TaffyException$ErrorType;
+dev/vfyjxf/taffy/tree/TaffyTree
+  access public
+  extends java/lang/Object
+  method public <init> ()V
+  method public <init> (I)V
+  method public acknowledgeLayout (Ldev/vfyjxf/taffy/tree/NodeId;)V
+  method public acknowledgeSubtree (Ldev/vfyjxf/taffy/tree/NodeId;)V
+  method public addChild (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/tree/NodeId;)V
+  method public childCount (Ldev/vfyjxf/taffy/tree/NodeId;)I
+  method public clear ()V
+  method public clearCache (Ldev/vfyjxf/taffy/tree/NodeId;)V
+  method public computeLayout (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/geometry/TaffySize;)V
+  method public computeLayoutWithMeasure (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/geometry/TaffySize;Ldev/vfyjxf/taffy/util/MeasureFunc;)V
+  method public containsNode (Ldev/vfyjxf/taffy/tree/NodeId;)Z
+  method public disableRounding ()V
+  method public enableRounding ()V
+  method public getAllNodes ()Ljava/util/Set;
+  method public getCacheEntry (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/TaffySize;Ldev/vfyjxf/taffy/tree/RunMode;)Ldev/vfyjxf/taffy/tree/LayoutOutput;
+  method public getChildAtIndex (Ldev/vfyjxf/taffy/tree/NodeId;I)Ldev/vfyjxf/taffy/tree/NodeId;
+  method public getChildren (Ldev/vfyjxf/taffy/tree/NodeId;)Ljava/util/List;
+  method public getLayout (Ldev/vfyjxf/taffy/tree/NodeId;)Ldev/vfyjxf/taffy/tree/Layout;
+  method public getLayoutChangeListener ()Ldev/vfyjxf/taffy/tree/LayoutChangeListener;
+  method public getMeasureFunc (Ldev/vfyjxf/taffy/tree/NodeId;)Ldev/vfyjxf/taffy/util/MeasureFunc;
+  method public getParent (Ldev/vfyjxf/taffy/tree/NodeId;)Ldev/vfyjxf/taffy/tree/NodeId;
+  method public getStyle (Ldev/vfyjxf/taffy/tree/NodeId;)Ldev/vfyjxf/taffy/style/TaffyStyle;
+  method public getUnroundedLayout (Ldev/vfyjxf/taffy/tree/NodeId;)Ldev/vfyjxf/taffy/tree/Layout;
+  method public hasDirtyDescendant (Ldev/vfyjxf/taffy/tree/NodeId;)Z
+  method public hasNewLayout (Ldev/vfyjxf/taffy/tree/NodeId;)Z
+  method public hasUnconsumedLayout (Ldev/vfyjxf/taffy/tree/NodeId;)Z
+  method public insertChildAtIndex (Ldev/vfyjxf/taffy/tree/NodeId;ILdev/vfyjxf/taffy/tree/NodeId;)V
+  method public isDirty (Ldev/vfyjxf/taffy/tree/NodeId;)Z
+  method public markDirty (Ldev/vfyjxf/taffy/tree/NodeId;)V
+  method public needsVisit (Ldev/vfyjxf/taffy/tree/NodeId;)Z
+  method public newLeaf (Ldev/vfyjxf/taffy/style/TaffyStyle;)Ldev/vfyjxf/taffy/tree/NodeId;
+  method public newLeafWithMeasure (Ldev/vfyjxf/taffy/style/TaffyStyle;Ldev/vfyjxf/taffy/util/MeasureFunc;)Ldev/vfyjxf/taffy/tree/NodeId;
+  method public newWithChildren (Ldev/vfyjxf/taffy/style/TaffyStyle;Ljava/util/List;)Ldev/vfyjxf/taffy/tree/NodeId;
+  method public newWithChildren (Ldev/vfyjxf/taffy/style/TaffyStyle;[Ldev/vfyjxf/taffy/tree/NodeId;)Ldev/vfyjxf/taffy/tree/NodeId;
+  method public printTree (Ldev/vfyjxf/taffy/tree/NodeId;)V
+  method public remove (Ldev/vfyjxf/taffy/tree/NodeId;)V
+  method public removeChild (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/tree/NodeId;)V
+  method public removeChildAtIndex (Ldev/vfyjxf/taffy/tree/NodeId;I)Ldev/vfyjxf/taffy/tree/NodeId;
+  method public replaceChildAtIndex (Ldev/vfyjxf/taffy/tree/NodeId;ILdev/vfyjxf/taffy/tree/NodeId;)Ldev/vfyjxf/taffy/tree/NodeId;
+  method public roundingEnabled ()Z
+  method public setChildren (Ldev/vfyjxf/taffy/tree/NodeId;[Ldev/vfyjxf/taffy/tree/NodeId;)V
+  method public setLayout (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/tree/Layout;)V
+  method public setLayoutChangeListener (Ldev/vfyjxf/taffy/tree/LayoutChangeListener;)V
+  method public setMeasureFunc (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/util/MeasureFunc;)V
+  method public setStyle (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/style/TaffyStyle;)V
+  method public setUnroundedLayout (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/tree/Layout;)V
+  method public storeCacheEntry (Ldev/vfyjxf/taffy/tree/NodeId;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/TaffySize;Ldev/vfyjxf/taffy/tree/RunMode;Ldev/vfyjxf/taffy/tree/LayoutOutput;)V
+  method public totalNodeCount ()I
+dev/vfyjxf/taffy/tree/TrackCounts
+  access public
+  extends java/lang/Object
+  field public explicit I
+  field public negativeImplicit I
+  field public positiveImplicit I
+  method public <init> (III)V
+  method public <init> (Ldev/vfyjxf/taffy/tree/TrackCounts;)V
+  method public implicitEndLine ()I
+  method public implicitStartLine ()I
+  method public len ()I
+  method public ozLineToNextTrack (I)I
+  method public positiveImplicitEndLine ()I
+  method public toString ()Ljava/lang/String;
+  method public trackToOzLine (I)I
+  method public update (Ldev/vfyjxf/taffy/tree/TrackCounts;)V
+dev/vfyjxf/taffy/tree/grid/NamedLineResolver
+  access public,final
+  extends java/lang/Object
+  method public <init> (Ldev/vfyjxf/taffy/style/TaffyStyle;)V
+  method public getAreaColumnCount ()I
+  method public getAreaRowCount ()I
+  method public getExplicitColumnCount ()I
+  method public getExplicitRowCount ()I
+  method public hasNamedLines ()Z
+  method public resolveColumnNames (Ldev/vfyjxf/taffy/geometry/TaffyLine;)Ldev/vfyjxf/taffy/geometry/TaffyLine;
+  method public resolveRowNames (Ldev/vfyjxf/taffy/geometry/TaffyLine;)Ldev/vfyjxf/taffy/geometry/TaffyLine;
+  method public setExplicitColumnCount (I)V
+  method public setExplicitRowCount (I)V
+  method public toString ()Ljava/lang/String;
+dev/vfyjxf/taffy/util/ContentSizeUtil
+  access public,final
+  extends java/lang/Object
+  method public,static computeContentSizeContribution (Ldev/vfyjxf/taffy/geometry/FloatPoint;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/TaffyPoint;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static max (Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+dev/vfyjxf/taffy/util/MaybeMath
+  access public,final
+  extends java/lang/Object
+  method public,static maybeAdd (Ljava/lang/Float;Ljava/lang/Float;)Ljava/lang/Float;
+  method public,static maybeAddPrimitive (Ljava/lang/Float;F)Ljava/lang/Float;
+  method public,static maybeMax (Ljava/lang/Float;Ljava/lang/Float;)Ljava/lang/Float;
+  method public,static maybeMaxPrimitive (Ljava/lang/Float;F)Ljava/lang/Float;
+  method public,static maybeMin (Ljava/lang/Float;Ljava/lang/Float;)Ljava/lang/Float;
+  method public,static maybeMinPrimitive (Ljava/lang/Float;F)Ljava/lang/Float;
+  method public,static maybeSub (Ljava/lang/Float;Ljava/lang/Float;)Ljava/lang/Float;
+  method public,static maybeSubPrimitive (Ljava/lang/Float;F)Ljava/lang/Float;
+  method public,static primitiveAdd (FLjava/lang/Float;)F
+  method public,static primitiveMax (FLjava/lang/Float;)F
+  method public,static primitiveMin (FLjava/lang/Float;)F
+  method public,static primitiveSub (FLjava/lang/Float;)F
+dev/vfyjxf/taffy/util/MeasureFunc
+  access public,abstract,interface
+  extends java/lang/Object
+  method public,abstract measure (Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/TaffySize;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+dev/vfyjxf/taffy/util/Resolve
+  access public,final
+  extends java/lang/Object
+  method public,static maybeAddSize (Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static maybeApplyAspectRatio (Ldev/vfyjxf/taffy/geometry/FloatSize;F)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static maybeClampSize (Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static maybeMaxSize (Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static maybeResolveRectLpa (Ldev/vfyjxf/taffy/geometry/TaffyRect;F)Ldev/vfyjxf/taffy/geometry/FloatRect;
+  method public,static maybeResolveSize (Ldev/vfyjxf/taffy/geometry/TaffySize;Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static maybeSubSize (Ldev/vfyjxf/taffy/geometry/FloatSize;Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static resolveLpaOrZero (Ldev/vfyjxf/taffy/style/LengthPercentageAuto;F)F
+  method public,static resolveRectLpaOrZero (Ldev/vfyjxf/taffy/geometry/TaffyRect;F)Ldev/vfyjxf/taffy/geometry/FloatRect;
+  method public,static resolveRectOrZero (Ldev/vfyjxf/taffy/geometry/TaffyRect;F)Ldev/vfyjxf/taffy/geometry/FloatRect;
+  method public,static resolveSize (Ldev/vfyjxf/taffy/geometry/TaffySize;Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static resolveSizeLp (Ldev/vfyjxf/taffy/geometry/TaffySize;Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static resolveSizeLpOrZero (Ldev/vfyjxf/taffy/geometry/TaffySize;Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static resolveSizeOrZero (Ldev/vfyjxf/taffy/geometry/TaffySize;Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+  method public,static sizeOrZero (Ldev/vfyjxf/taffy/geometry/FloatSize;)Ldev/vfyjxf/taffy/geometry/FloatSize;
+dev/vfyjxf/taffy/util/RoundLayout
+  access public,final
+  extends java/lang/Object
+  method public,static roundLayout (Ldev/vfyjxf/taffy/tree/TaffyTree;Ldev/vfyjxf/taffy/tree/NodeId;)V
+  method public,static roundLayout (Ldev/vfyjxf/taffy/tree/TaffyTree;Ldev/vfyjxf/taffy/tree/NodeId;FF)V
+dev/vfyjxf/taffy/util/TaffyMath
+  access public,final
+  extends java/lang/Object
+  method public,static abs (F)F
+  method public,static applyAspectRatioHeight (Ljava/lang/Float;Ljava/lang/Float;)Ljava/lang/Float;
+  method public,static applyAspectRatioWidth (Ljava/lang/Float;Ljava/lang/Float;)Ljava/lang/Float;
+  method public,static ceil (F)F
+  method public,static clamp (FFF)F
+  method public,static f32Max (FLjava/lang/Float;)F
+  method public,static floor (F)F
+  method public,static isDefined (F)Z
+  method public,static isNaN (F)Z
+  method public,static max (FF)F
+  method public,static maybeAdd (FF)F
+  method public,static maybeClamp (FFF)F
+  method public,static maybeDiv (FF)F
+  method public,static maybeMax (FF)F
+  method public,static maybeMin (FF)F
+  method public,static maybeMul (FF)F
+  method public,static maybeSub (FF)F
+  method public,static min (FF)F
+  method public,static orElse (Ljava/lang/Float;F)F
+  method public,static round (F)F
