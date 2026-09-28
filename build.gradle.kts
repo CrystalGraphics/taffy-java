@@ -21,7 +21,7 @@ plugins {
 
 // Coordinates, so a consumer's dependencySubstitution can name this module.
 group = "com.crystalgui"
-version = "1.0.0"
+version = providers.gradleProperty("modVersion").get()
 
 abstractModule("dev/vfyjxf/taffy/jvmdg")
 publishedModule("Taffy (CrystalGUI fork)", "The Taffy flexbox and grid layout engine in Java, as CrystalGUI ships it.", Licence.MIT)
